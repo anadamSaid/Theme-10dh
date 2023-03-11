@@ -1,0 +1,35 @@
+.dropdown {
+  color: var(--gray);
+
+  &:hover .expand-more {
+    color: var(--brand-primary);
+  }
+
+  .expand-more {
+    color: var(--black);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .active {
+    max-height: 200px;
+    overflow-y: hidden;
+    visibility: visible;
+  }
+
+  select {
+    color: var(--black);
+    background: var(--white);
+    border: 0 none;
+    outline: 0 none;
+    // stylelint-disable-next-line
+    -moz-appearance: none;
+  }
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: var(--brand-primary);
+  text-decoration: none;
+  background: none;
+}

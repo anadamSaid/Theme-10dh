@@ -1,0 +1,178 @@
+
+.breadcrumb {
+    .social-sharing{
+        margin: 0;
+        justify-content: flex-end;
+        font-size: 12px;
+        ul 
+        {
+        margin-left: 10px;
+        li{
+            margin-left: 0px;
+            a svg
+            {
+            width: 12px;
+            }
+            &:hover 
+            {
+               opacity: .6 !important;
+            }
+        }
+        }
+        li::after{
+            display: none;
+        }
+    }
+    .container{
+        display: flex;
+    }
+}
+.social-sharing{
+    font-size: 16px;
+    color: var(--page-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-top: 0!important;
+    margin-bottom: 16px;
+
+    .material-icons-outlined{
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    ul{
+        display: flex;
+
+        li{
+            opacity: 1!important;
+            width: 20px;
+            height: 25px;
+            margin-left: 0;
+            background-color: transparent;
+            background-image: none !important;
+            background-size: 19px 18px;
+            margin-left: 5px;
+            a{
+                margin-bottom: 0px;
+                text-indent: 0%;
+
+                svg{
+                    fill: var(--page-text);
+                    height: 23px;
+                    width: 16px;
+                }
+            }
+        }
+        li:hover{
+            opacity: 0.6;
+        }
+
+    }
+
+
+
+    
+}
+.shaireBellowProduct{
+    margin-right: 10px;
+    .social-sharing{
+        display: flex!important;
+        justify-content: flex-start;
+        padding: 16px 0;
+        ul{
+            margin-left: 5px;
+            li{
+                margin: 0px 5px;
+                width: 28px;
+                height: 28px;
+                a{
+                    border: 1px solid var(--gray-lighter);
+                    background-color: var(--accent-background);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 6px;
+                    padding: 7px;
+                }
+            }
+
+            .facebook{
+                a:hover{
+                    opacity: 1;
+                    background-color: $background-fb;
+                    border-color: $bordercolor-fb;
+                    box-shadow: 0 0 0 0.2rem $bordercolor-fb2;
+                    svg{
+                        fill: var(--white);
+                    }
+                }
+            }
+
+            .twitter{
+                a:hover{
+                    opacity: 1;
+                    background-color: $background-twitter;
+                    border-color: $bordercolor-twitter;
+                    box-shadow: 0 0 0 0.2rem $bordercolor-twitter2;
+                    svg{
+                        fill: var(--white);
+                    }
+                }
+            }
+            .pinterest{
+                a:hover{
+                    opacity: 1;
+                    background-color: $background-pinterest;
+                    border-color: $bordercolor-pinterest;
+                    box-shadow: 0 0 0 0.2rem $bordercolor-pinterest2;
+                    svg{
+                        fill: var(--white);
+                    }
+                }
+            }
+            .whatsapp{
+                a:hover{
+                    opacity: 1;
+                    background-color: $background-whatsapp;
+                    border-color: $bordercolor-whatsapp;
+                    box-shadow: 0 0 0 0.2rem $bordercolor-whatsapp2;
+                    svg{
+                        fill:  var(--white);
+                    }
+                }
+            }
+            .gmail{
+                a:hover{
+                    opacity: 1;
+                    background-color: var(--brand-primary);
+                    border-color: var(--brand-primary);
+                    box-shadow: 0 0 0 0.2rem var(--page-hover);
+                    svg{
+                        fill:  var(--white);
+                    }
+                }
+            }
+            .messenger{
+                a:hover{
+                    opacity: 1;
+                    background-color: $background-twitter;
+                    border-color: $bordercolor-twitter;
+                    box-shadow: 0 0 0 0.2rem $bordercolor-twitter2;
+                    svg{
+                        fill:  var(--white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width :770px) {
+    .social-sharing{
+        display: none;
+    }
+}

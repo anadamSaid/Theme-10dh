@@ -1,0 +1,239 @@
+.contact-rich {
+  margin-bottom: 2rem;
+  color: var(--gray);
+  word-wrap: break-word;  
+
+h4 {
+  margin-bottom: 2rem;
+  color: var(--black);
+  text-transform: uppercase;
+}
+.contact-form
+.block {
+  height: auto;
+  overflow: hidden;
+
+  .icon {
+    float: left;
+    width: 3.5rem;
+
+    i {
+      font-size: 2rem;
+    }
+  }
+
+  .data {
+    width: auto;
+    overflow: hidden;
+    font-size: var(--font-size-sm);
+    color: var(--black);
+
+    &.email {
+      padding-top: 0.375rem;
+    }
+  }
+
+  a[href^="mailto:"] {
+    margin-top: 1rem;
+    clear: both;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 0.815rem;
+    }
+  }
+}
+}
+
+.contact-form {
+.form-control{
+  background: var(--white);
+  border-radius: 6px;
+  padding: 16px 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  display: inline-block;
+  background-color: var(--form-background)!important;
+  border-color: var(--form-background)!important;
+  color: var(--form-text)!important;
+  &::placeholder{
+    color: var(--form-placeholder)!important;
+  }
+  max-width: 100%;
+  width: 100%;
+  border: none;
+}
+.form-control:focus, .form-control:hover {
+  background-color: var(--form-hover-bg)!important;
+  border-color: var(--form-hover-bg)!important;
+  box-shadow: 0 0 0 .2rem var(--form-hover)!important;
+}
+#form_ContactUs textarea[name=message] {
+  min-height: 200px;
+}
+h3 {
+  color: var(--price-darck);
+  text-transform: capitalize;
+}
+}
+
+.Center  {
+display: flex;
+justify-content: center;
+align-items: center;  
+}  
+.Page-Titel {
+word-wrap: break-word;
+word-break: break-word;
+margin-bottom: 12px;
+font-weight: 700;
+font-style: normal;
+text-transform: initial;
+letter-spacing: 0px;
+line-height: 1.2;
+font-size: 60px;
+}
+
+#form_ContactUs{
+  max-width: 720px;
+  margin: 0 auto;
+textarea[name="message"]{
+  min-height: 200px;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 8px;
+ margin: 0 auto;
+  label{
+    padding: 10px 0px;
+    margin-bottom: 0;
+    text-align: left;
+    color: var(--gray-dark);
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+}
+
+#id-order{
+  height: 3.5rem!important;
+}
+
+.btn-send {
+  text-align: left!important;
+}
+
+.formContact-footer {
+
+  .btn-send-form{
+
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--white);
+
+  }
+
+  .btn {
+    border: 1px solid var(--white);
+    border-radius: 6px;
+    padding: 16px 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: initial;
+    letter-spacing: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   &:hover {
+    opacity: 1;
+    color: var(--white);
+    border:none!important;
+    box-shadow: 0 0 0 0.2rem var(--form-hover);
+   }
+
+  }
+  margin-top: 10px;
+}
+
+.input-group{
+  label[for=file-upload]:nth-child(1){
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: var(--white);
+    border: 1px solid var(--form-background);
+    border-radius: 6px;
+    padding: 16px 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    display: inline-block;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: initial;
+    letter-spacing: 0px;
+  }
+
+  &:hover {
+    opacity: 1;
+    color: var(--white);
+    border-radius: 6px;
+    border-color: var(--form-hover-bg)!important;
+    box-shadow: 0 0 0 0.2rem var(--form-hover);
+   }
+
+}
+
+.Forms-Two-Fields
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .form-group:first-child{
+    margin-right: 10px!important;
+  } 
+}
+.Forms-Two-Fields2{
+  display: none!important;
+}
+
+
+@media (max-width: 480px) {
+
+#form_ContactUs {
+  .formContact-footer{
+    margin-left: -7% !important ;
+    .btn-send-form{
+      width: 93% !important;
+    }
+  }
+  .Forms-Two-Fields{
+    .row{
+      padding-left: 1.9% !important;
+    }
+  }
+}
+}
+
+@media (max-width: 766px) {
+  .formContact-footer {
+    .btn {
+      width: 100%;
+    }
+  }
+  .Forms-Two-Fields
+  {
+    flex-direction: column;    
+  }
+  .Center {
+    .Page-Titel{
+      font-size: 34px !important ;
+    }
+  }
+}
+} 

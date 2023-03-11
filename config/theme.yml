@@ -1,0 +1,218 @@
+name: prestahope_theme
+display_name: Prestahope Theme
+version: 1.0.0
+author:
+  name: "Venvaukt"
+  email: "mehdi@venvaukt.com"
+  url: "https://www.venvauktdev.com/"
+
+meta:
+  compatibility:
+    from: 8.0.0
+    to: ~
+
+  available_layouts:
+    layout-full-width:
+      name: Full Width
+      description: No side columns, ideal for distraction-free pages such as product pages.
+    layout-both-columns:
+      name: Three Columns
+      description: One large central column and 2 side columns.
+    layout-left-column:
+      name: Two Columns, small left column
+      description: Two columns with a small left column
+    layout-right-column:
+      name: Two Columns, small right column
+      description: Two columns with a small right column
+
+assets:
+# If you're using this theme as child and you want to load
+# the parent theme assets, uncomment this line.
+#  use_parent_assets: true
+
+# The following lines are showing how to load assets in your page
+# Uncomment and change value to start loading css or js files
+#  css:
+#  all:
+#    - id: custom-lib-style
+#    path: assets/css/custom-lib.css
+#  product:
+#    - id: product-style
+#    path: assets/css/product.css
+#    media: all
+#    priority: 200
+#  js:
+#  cart:
+#    - id: cat-extra-lib
+#    path: assets/js/cart-lib.js
+
+
+global_settings:
+  configuration:
+    PS_IMAGE_QUALITY: png
+  modules:
+    to_enable:
+      - ps_linklist
+      - prestahope_categories
+      - prestahope_categoryfeature
+      - prestahope_sharebuttons
+      - prestahope_socialfollow
+      - prestahope_configuration
+      - prestahope_navbarslider
+      - prestahope_drawar
+      - prestahopebanners
+      - prestahope_sticky
+      - blockwishlist
+      - WishListModule
+      - prestahope_cookie
+      - prestahope_quick
+      - prestahope_code
+      - prestahope_paiements
+    to_disable:
+      - ps_socialfollow
+  hooks:
+    modules_to_hook:
+      displaycollectionshome:
+        - prestahopebanners
+      displayCategoriesBanner:
+        - prestahope_categories
+      displayreassurances:
+        - blockreassurance
+      displayAfterBodyOpeningTag:
+        - blockreassurance
+      displayNavFullWidth:
+        - blockreassurance
+      displayAdminCustomers:
+        - blockwishlist
+      displayCustomerAccount:
+        - blockwishlist
+        - psgdpr
+      displayMyAccountBlock:
+        - blockwishlist
+      displayNav1:
+        - ps_contactinfo
+      displayNav2:
+        - ps_customersignin
+      displaysearchbar:
+        - ps_searchbar
+      displayNav3:
+        - ps_languageselector
+        - ps_currencyselector
+      displayNav4:
+        - ps_shoppingcart
+      displaydrawerlogin:
+        - ps_customersignin
+        - blockwishlist
+      # displaydrawerlinks:
+      #   - ps_linklist
+      #   - ps_customeraccountlinks
+      #   - ps_contactinfo
+      displayNav5:
+        - ps_languageselector
+        - ps_currencyselector
+      displayTop:
+        - ps_mainmenu
+        # - ps_searchbar
+      displayHomeNavSlider:
+        - prestahope_navbarslider
+      displayShareButtons:
+        - prestahope_sharebuttons
+      displaySocialFollow:
+        - prestahope_socialfollow
+      displayHome:
+        - ps_featuredproducts
+        - ps_banner
+        - ps_customtext
+        - ps_specials
+        - ps_newproducts
+        - ps_bestsellers
+        - prestahope_categoryfeature
+      displayFooterBefore:
+        - ps_emailsubscription
+        - blockreassurance
+      displayFooterEmail:
+        - ps_contactinfo 
+      displayThemeConfig:
+        - prestahope_configuration
+      displayFooter:
+        - ps_linklist
+        - ps_customeraccountlinks
+        - blockwishlist
+        # - ps_contactinfo
+      displayFooterAfter:
+        - blockreassurance
+      displayFooterProduct:
+        - productcomments
+      displayLeftColumn:
+        - ps_categorytree
+        - ps_facetedsearch
+      displaySearch:
+        - ps_searchbar
+      displayProductAdditionalInfo:
+        # - ps_sharebuttons
+        - productcomments
+      displayProductListReviews:
+        - productcomments
+      displayReassurance:
+        - blockreassurance
+      displayOrderConfirmation2:
+        - ps_featuredproducts
+      displayProductActions:
+        - blockwishlist
+
+  image_types:
+    cart_default:
+      width: 125
+      height: 125
+      scope: [ products ]
+    small_default:
+      width: 220
+      height: 220
+      scope: [ products, categories, manufacturers, suppliers ]
+    medium_default:
+      width: 452
+      height: 452
+      scope: [ products, manufacturers, suppliers ]
+    home_default:
+      width: 250
+      height: 250
+      scope: [ products ]
+    large_default:
+      width: 800
+      height: 800
+      scope: [ products, manufacturers, suppliers ]
+    category_default:
+      width: 141
+      height: 180
+      scope: [ categories ]
+    stores_default:
+      width: 170
+      height: 115
+      scope: [ stores ]
+  new_password_policy_feature: true
+
+theme_settings:
+  default_layout: layout-full-width
+  layouts:
+    category: layout-left-column
+    best-sales: layout-full-width
+    new-products: layout-full-width
+    prices-drop: layout-full-width
+    contact: layout-full-width
+  dependencies:
+    modules:
+      - prestahope_categoryfeature
+      - prestahope_sharebuttons
+      - prestahope_socialfollow
+      - prestahope_categories
+      - prestahope_configuration
+      - prestahope_navbarslider
+      - WishListModule
+      - blockwishlist
+      - prestahope_cookie
+      - prestahopebanners
+      - prestahope_sticky
+      - prestahope_quick
+      - prestahope_code
+      - prestahope_drawar
+      - prestahope_paiements

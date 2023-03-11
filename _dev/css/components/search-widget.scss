@@ -1,0 +1,146 @@
+.search-widget {
+  display: inline-block;
+  @include search-box();
+}
+.search-rt{
+  border: 1px solid #e5e5e5;
+    border-color: var(--brand-primary);
+    background-color: var(--brand-primary);
+    font-family: var(--font-accent-family);
+
+    padding: 20px 16px;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: initial;
+    letter-spacing: 0px;
+    color: var(--white);
+    position: sticky;
+    z-index: 3;
+    top: 0;
+}
+.search-show-all{
+  width: 100%;
+  background-color: var(--drawars-background);
+  border-color: var(--drawars-background);
+  color: var(--white);
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ui-widget-content{
+  top: 110px!important;
+  width: 100%!important;
+  left: 0!important;
+  right: 0!important;
+  border-radius: 6px!important;
+  background-color: var(--drawars-background)!important;
+  background: var(--drawars-background)!important;
+}
+.ui-autocomplete.searchbar-autocomplete li a:hover{
+  background-color: var(--drawars-button)!important;
+}
+.ui-autocomplete.searchbar-autocomplete li a{
+  padding: 18px 15px!important;
+}
+.ui-autocomplete{
+  background-color: var(--drawars-background)!important;
+  .ui-menu-item a {
+    color: var(--drawars-text);
+  }
+}
+.header-top {
+  &-right {
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+      padding-right: 15px;
+    }
+  }
+
+  .search-widgets {
+    form {
+      input[type="text"] {
+        width: 100%;
+        min-width: inherit;
+        color: var(--drawars-text);
+        background: var(--gray-lighter);
+
+        &:focus {
+          background: var(--drawars-text);
+        }
+      }
+
+      button[type="submit"] {
+        top: 50%;
+        bottom: inherit;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  // stylelint-disable-next-line
+  #search_widget {
+   
+    input {
+      padding-right: 1rem;
+      color: var(--form-text)!important;
+    }
+  }
+}
+
+#checkout {
+  #search_widget {
+    display: none; /* Not ideal solution by allows to reuse same hooks/templates */
+  }
+}
+
+#pagenotfound {
+  .page-content {
+    #search_widget {
+      width: 100%;
+    }
+  }
+}
+
+.page-not-found {
+  .search-widget {
+    form {
+      display: inline-block;
+    }
+  }
+}
+
+/*** Responsive part ***/
+@include media-breakpoint-down(sm) {
+  .ui-widget-content{
+    top: 80px!important;
+  }
+  .header-top {
+    .search-widget {
+      float: none;
+
+      form {
+        margin: 0 auto;
+
+        input[type="text"] {
+          min-width: inherit;
+          background: var(--white);
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .search-widget {
+    min-width: 15.63rem;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .header-top {
+    .search-widgets {
+      max-width: 13rem;
+    }
+  }
+}

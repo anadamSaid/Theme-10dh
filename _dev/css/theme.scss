@@ -1,0 +1,77 @@
+/* stylelint-disable */
+// *:not(
+//     .breadcrumb *,
+//     #slider-container *,
+//     #checkout *,
+//     .add-to-cart-text,
+//     .cart-products-count,
+//     h1,
+//     .h2,
+//     .langslecte,
+//     .scart-cp,
+//     .drawer-title span,
+//     .product-title a,
+//     .search-rt,
+//     .tagsul li a,
+//     .h1,
+//     .modal-header h2,
+//     .material-icons-outlined,
+//     .material-icons,
+//     .price,
+//     .cpbtns,
+//     .product-prices span,
+//     .add-to-cart,
+//     .breadcrumb ol li span,
+//     .breadcrumb ol li,
+//     .btn_Sub,
+//     .social-sharing span,
+//     .modal-dialog h3
+//     ){
+//         font-size: var(--font-body-base-size);
+//         font-family: var(--font-body-family);
+//     }
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "partials/_variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css";
+@import "partials/_mixins";
+@import "partials/_fonts";
+@import "partials/_commons";
+@import "components/alert";
+@import "components/drop-down";
+@import "components/search-widget";
+@import "components/mainmenu";
+@import "components/checkout";
+@import "components/customer";
+@import "components/forgotten-password";
+@import "components/renew-password";
+@import "components/imageslider";
+@import "components/featuredproducts";
+@import "components/custom-text";
+@import "components/categories";
+@import "components/subcategories";
+@import "components/products";
+@import "components/cart";
+@import "components/block-reassurance";
+@import "components/quickview";
+@import "components/stores";
+@import "components/footer";
+@import "components/contact";
+@import "components/errors";
+@import "components/customization-modal";
+@import "components/sitemap";
+@import "components/newsletter";
+@import "components/brands";
+@import "components/header";
+@import "components/wrapper";
+@import "components/main";
+@import "components/notifications";
+@import "components/progressbar";
+@import "components/login";
+@import "components/ps_socialfollow";
+@import "components/ps_sharebuttons";
+@import "components/slick";
+@import "components/slick-theme";
+@import "components/costumcsssaid";
+
+/* stylelint-enable */

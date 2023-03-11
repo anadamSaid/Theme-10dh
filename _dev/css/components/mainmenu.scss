@@ -1,0 +1,339 @@
+
+.top-menu {
+  &[data-depth="1"] {
+    margin: 0.625rem;
+  }
+
+  &[data-depth="0"] {
+    margin-bottom: 0;
+  }
+
+  a:not([data-depth="0"]) {
+    display: block;
+    padding: 0.625rem;
+    font-weight: 400;
+    color: var(--drawars-text);
+  }
+
+  a.dropdown-submenu {
+    font-weight: 600;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  a[data-depth="0"] {
+    padding: $small-space;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &:hover {
+      #header & {
+        opacity: 0.68;
+        text-decoration: none;
+      }
+    }
+  }
+
+  a[data-depth="1"],
+  a[data-depth="2"] {
+    padding: 0 0.625rem 0.625rem 0;
+  }
+
+  .collapse {
+    display: inherit;
+  }
+
+  .sub-menu {
+    z-index: 18;
+    width: calc(100% - 30px);
+    min-width: calc(100% - 30px);
+    margin-left: 0.9375rem;
+    visibility: hidden;
+    border: none;
+    box-shadow: 2px 1px 11px 2px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+    &.collapse {
+      visibility: hidden;
+      opacity: 0;
+
+      &.in {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    ul[data-depth="1"] > li {
+      float: left;
+      margin: 0 1.25rem;
+    }
+
+    a:hover {
+      color: var(--black);
+    }
+  }
+
+  .popover {
+    max-width: inherit;
+    border-radius: 0;
+  }
+}
+
+.popover.bs-tether-element-attached-top {
+  margin-top: 0;
+}
+
+#_desktop_top_menu {
+  .popover{
+    top: 55px;
+    width: 100%;
+    margin: 0;
+  }
+  .top-menu {
+    &[data-depth="0"] {
+      li {
+        &:hover {
+          .sub-menu {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay-backdrop{
+  background-color: var(--drawars-overlay);
+  opacity: var(--drawars-overlay-opacity);
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: none;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999996;
+  transition: all .6s ease;
+}
+#mobile_top_menu_wrapper {
+  background: var(--drawars-background);
+  width: 300px;
+  max-width: 100%;
+  left: -600px;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  z-index: 999999999;
+  transition: all .6s ease;
+  display: flex;
+  flex-direction: column;
+  margin: 0!important;
+  #_mobile_top_menu{
+    overflow-y: scroll;
+    flex: 1;
+    padding-bottom: 150px;
+  }
+  .loginbtn{
+    display: none!important;
+  }
+  .drawer-heade-container{
+    .drawer-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      .drawer-title{
+        font-size: var(--font-headings-base-size);
+        font-family: var(--font-headings-family);
+        span{
+          color: var(--drawars-text);
+        }
+        flex: 1;
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    .drawer-close-button:hover{
+      box-shadow: 0 0 0 0.2rem var(--brand-primary);
+    }
+    .drawer-close-button:focus{
+      outline:none;
+    }
+    .drawer-close-button{
+      span{
+        color: var(--drawars-text);
+        font-size: 18px;
+      }
+      border-radius: 8px;
+      width: 35px;
+      height: 35px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--drawars-button);
+    }
+    position: relative;
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid var(--drawars-border);
+  }
+  #top-menu {
+    margin-bottom: 0.625rem;
+  }
+
+  .top-menu {
+    color: var(--black);
+
+    .collapse-icons[aria-expanded="true"] {
+      .add {
+        display: none;
+      }
+
+      .remove {
+        display: block;
+      }
+    }
+
+    .collapse-icons .remove {
+      display: none;
+    }
+
+    .navbar-toggler {
+      display: inline-block;
+      padding: 0;
+    }
+
+    a[data-depth="0"] {
+      padding: 1rem 0.625rem;
+      // border-bottom: 1px solid var(--gray-lighter);
+    }
+
+    .collapse {
+      display: none;
+
+      &.in {
+        display: block;
+      }
+    }
+
+    .sub-menu {
+      position: static;
+      z-index: inherit;
+      display: block;
+      // width: 100%;
+      // min-width: 100%;
+      margin-left: 0;
+      overflow: hidden;
+      background: var(--drawars-background);
+      box-shadow: none;
+      margin-left: 10px;
+      border-left: 1px solid var(--drawars-border);
+      &.collapse {
+        display: none;
+
+        &.in {
+          display: block;
+        }
+      }
+
+      ul[data-depth="0"] > li {
+        border-bottom: 1px solid var(--gray);
+      }
+
+      ul[data-depth="1"] {
+        margin: 0;
+
+        > li {
+          float: none;
+          margin: 0;
+
+          a {
+            text-transform: none;
+          }
+        }
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li > a {
+        padding: 0.625rem;
+        font-weight: 600;
+        border:none;
+        color: var(--drawars-text);
+      }
+      
+
+      ul[data-depth="2"] li a {
+        padding-left: 1.25rem;
+      }
+
+      ul[data-depth="3"] li a {
+        padding-left: 2.5rem;
+      }
+
+      ul[data-depth="4"] li a {
+        padding-left: 3.75rem;
+      }
+    }
+  }
+
+  .js-top-menu-bottom {
+    // position: fixed;
+    // bottom: 0;
+    border-top: 1px solid var(--brand-primary);
+    // left: 0;
+    // width: 300px;
+    a {
+      color: var(--drawars-text);
+    }
+    a:hover {
+      color: var(--drawars-text);
+    }
+
+    .language-selector-wrapper {
+      padding: 0.625rem;
+
+      .language-selector {
+        display: inline;
+      }
+    }
+
+    .currency-selector {
+      padding: 0.625rem;
+    }
+
+    #contact-link {
+      padding: 0.625rem;
+    }
+
+    .user-info {
+      padding: 0 0.625rem;
+
+      a {
+        display: block;
+        width: 100%;
+        padding: 0.625rem 0;
+      }
+    }
+  }
+}
+.drawer_open{
+  left: 0!important;
+}
+@include media-breakpoint-down(sm) {
+  .top-menu {
+    .sub-menu {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.5s ease-out;
+    }
+  }
+}
