@@ -23,17 +23,24 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-{capture assign="productClasses"}{if !empty($productClass)}{$productClass}{else}col-xs-6 col-sm-6 col-xl-4{/if}{/capture}
+{capture assign="productClasses"}
+{if $productClass == "PopularProducts"}
+    col-lg-6 col-md-6 col-sm-6
+{else if !empty($productClass)}
+{$productClass}
+{else}
+col-xs-6 col-sm-6 col-xl-4
+{/if}{/capture}
 
-<div class="products row {if !empty($cssClass)} {$cssClass}{/if}">
+<div class="products container {if !empty($cssClass)} {$cssClass}{/if}">
     {if $productClass == "PopularProducts"}  
         {foreach from=$products item="product" key="position"}
            {if $page.page_name == 'category' && $position==6}
                {hook h='displayCategoriesBanner'}
            {/if}
-           {if $position % 2 == 0}<div class="item col-lg-6" class={$productClass}">{/if}
+           {if $position % 4 == 0}<div class="row item col-lg-12" class={$productClass}">{/if}
                {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
-           {if $position % 2 == 1 || $position == $products|@count-1}</div>{/if}
+           {if $position % 4 == 3 || $position == $products|@count-1}</div>{/if}
        {/foreach}
     {else}
         {foreach from=$products item="product" key="position"}

@@ -340,9 +340,112 @@ $(".arrowleft").click(function() {
       scrollLeft: -(((450)) - box.scrollLeft()),
     })
 });
+$(document).ready(function() {
 
-// swiper for Products That's -10DH 
 
+    //owlCarrosel of product that are -10dh
+    var owl10dh = $('#products_10dh .owl-carousel');
+    owl10dh.owlCarousel({
+        loop: true,
+        margin:10,
+        nav:false,
+        autoplay: true,
+        rewind: true,
+        autoplayHoverPause: true,
+        slideSpeed: 0,
+        //autoplayTimeout: 1000, 
+        responsive:{
+            0:{
+              items:1
+              },
+            420:{
+              items:2
+              },
+            600:{
+              items:3
+              },
+            992:{
+              items:4
+              },
+            1200:{
+              items:5
+              },
+        }
+    });
+    owl10dh.on('changed.owl.carousel', function(event) {
+        var currentItem = event.item.index;
+        var totalItems = event.item.count;
+        // console.log(currentItem);
+        // Disable next button if on last item
+        if (currentItem >= totalItems) {
+          document.querySelector(".Move_Products #next_btn_10dh").classList.add("swiper-button-disabled");
+          setTimeout(() => {
+            owl10dh.trigger('to.owl.carousel', [0, 500, true]);   
+          }, 500);
+        } else {
+          document.querySelector(".Move_Products #next_btn_10dh").classList.remove("swiper-button-disabled");
+        }
+        // Disable prev button if on first item
+        if (currentItem <= 5) {
+          document.querySelector(".Move_Products #prev_btn_10dh").classList.add("swiper-button-disabled");
+        } else {
+          document.querySelector(".Move_Products #prev_btn_10dh").classList.remove("swiper-button-disabled");
+        }
+      });
+    $('#next_btn_10dh').click(function() {
+      owl10dh.trigger('next.owl.carousel');
+    });
+    $('#prev_btn_10dh').click(function() {
+      owl10dh.trigger('prev.owl.carousel');
+    });
+
+    //owlCarrosel of product that are shoosing Category
+    var owlPupular = $('#PopularProducts .owl-carousel');
+    owlPupular.owlCarousel({
+        loop: true,
+        margin:10,
+        nav:false,
+        autoplay: true,
+        rewind: true,
+        autoplayHoverPause: true,
+        slideSpeed: 0,
+        //autoplayTimeout: 1000, 
+        responsive:{
+            0:{
+              items:1
+              },
+        }
+    });
+    $('#next_btn_pupProducts').click(function() {
+         owlPupular.trigger('next.owl.carousel');
+    });
+    $('#prev_btn_pupProducts').click(function() {
+         owlPupular.trigger('prev.owl.carousel');
+    });
+    });
+
+    var owlPromo = $('#Promo_Products .owl-carousel');
+    owlPromo.owlCarousel({
+        loop: true,
+        margin:10,
+        nav:false,
+        autoplay: true,
+        rewind: true,
+        autoplayHoverPause: true,
+        slideSpeed: 0,
+        //autoplayTimeout: 1000, 
+        responsive:{
+            0:{
+              items:1
+              },
+        }
+    });
+    $('#next_btn_pupProducts').click(function() {
+         owlPromo.trigger('next.owl.carousel');
+    });
+    $('#prev_btn_pupProducts').click(function() {
+         owlPromo.trigger('prev.owl.carousel');
+    });
 
 
 
