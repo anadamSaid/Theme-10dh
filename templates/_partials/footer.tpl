@@ -61,20 +61,14 @@
 {/block}
 </li></ul>
 
-
-
-
-
 </div>
 <div class="Column_QuickLinks"> 
 {block name='hook_footer'}
  {hook h='displayFooter'}
 {/block}
 </div>
-
 <div class="Column_ContactEmail" >
-
-<h6 class="Big_Titels_Footer">Subscribe to our newsletter</h6>       
+<h6 class="Big_Titels_Footer">{l s='Subscribe to our newsletter!' d='Admin.Actions'}</h6>       
 {block name='hook_footer_before'}
 {hook h='displayFooterBefore'}
 {/block}

@@ -25,7 +25,7 @@
 <div id="_desktop_user_info">
   <div class="user-info">
   <ul id="CtmAccountMenu" class="cstdropdown-menu dropdown-parent">
-  {if $logged}
+{if $logged}
     <a href="{$urls.pages.my_account}" class="dropdown-item" rel="nofollow">
       <li class="dropdown-link">
         <i class="material-icons">&#xE7FF;</i>
@@ -38,7 +38,7 @@
         <span class="ddmispn">{l s='Sign out' d='Shop.Theme.Actions'}</span>
       </li>
     </a>
-    {else}
+{else}
       <a href="{$urls.pages.authentication}?back={$urls.current_url|urlencode}" class="dropdown-item">
         <li class="dropdown-link">
           <span class="material-icons-outlined icon-width">exit_to_app</span>
@@ -51,7 +51,7 @@
           <span class="ddmispn">{l s='Create Account' d='Shop.Theme.Actions'}</span>
         </li>
       </a>
-    {/if}
+{/if}
    </ul>
 
       <div

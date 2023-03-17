@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section class="col-md-6 col-xs-12 featured-products clearfix" id="PopularProducts">
+<section class="col-md-4 col-xs-12 featured-products clearfix" id="PopularProducts">
     <div class="products-section-title container_ttl">
         <h2 class="h2 products-section-title text-capitalize">
             {l s='Popular Products' d='Shop.Theme.Catalog'}

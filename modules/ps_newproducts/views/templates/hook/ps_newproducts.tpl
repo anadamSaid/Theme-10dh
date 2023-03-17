@@ -27,7 +27,7 @@
     <div #swiperRef="" class="swiper" id="products_10dh">
       <div class="products-section-title container_ttl">
       <h2 class="h2 products-section-title text-capitalize">
-      {l s='Products -10Dh' d='Shop.Theme.Catalog'}
+          {l s='Products -10Dh' d='Shop.Theme.Catalog'}
       </h2>
       <div class="Move_Products">
         <div class="swiper-button-prev" id="prev_btn_10dh"></div>
@@ -48,46 +48,3 @@
   transition: all 0.5s ease-in-out;
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{* <!-- Slider main container -->
-<div #swiperRef="" class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-    </div>
-    <div class="swiper-button-next2"></div>
-    <div class="swiper-button-prev2"></div>
-    <div class="swiper-pagination2"></div>
-  </div> *}
-
-

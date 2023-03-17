@@ -22,13 +22,20 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section class="featured-products clearfix mt-3">
-  <h2 class="h2 products-section-title text-capitalize">
-    {l s='Best Sellers' d='Shop.Theme.Catalog'}
-  </h2>
-  {include file="catalog/_partials/productlist.tpl" products=$products productClass="col-xs-6 col-sm-6 col-lg-4 col-xl-3"}
+
+<section class="col-md-4 col-xs-12 featured-products clearfix mt-3" id="Best_Sellers">
+  <div class="products-section-title container_ttl">
+      <h2 class="h2 products-section-title text-capitalize">
+          {l s='Best Sellers' d='Shop.Theme.Catalog'}
+      </h2>
+      <div class="Move_Products">
+        <div class="swiper-button-prev" id="prev_btn_BestSellers"></div>
+        <div class="swiper-button-next" id="next_btn_BestSellers"></div>
+      </div>
+  </div>
+  {include file="catalog/_partials/productlist.tpl" products=$products cssClass="row owl-carousel" productClass="PopularProducts"}
   <div class="seemore">
-    <a class="all-product-link float-xs-left float-md-right h4" href="{$allBestSellers}">
+    <a class="all-product-link float-xs-left float-md-right h4" href="{$allSpecialProductsLink}">
       <span>{l s='View all' d='Shop.Theme.Catalog'}</span><i class="material-icons">&#xE315;</i>
     </a>
   </div>

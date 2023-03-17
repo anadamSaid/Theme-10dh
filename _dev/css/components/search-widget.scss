@@ -144,3 +144,44 @@
     }
   }
 }
+.desklinks #searchbar{
+  display:none !important;
+}
+#header .search_wdg #search_widget form .search
+{
+ border: 1px solid var(--search-bar-input-bg)!important; 
+}
+@media (max-width: 767px) {
+  .desklinks #searchbar {
+    display:block !important;
+    width: 100% !important;
+    padding: 0px;
+  }
+  #header .header-nav .Menu_Principal .desklinks
+  {
+      background: var(--page-buttons-accent-bg) !important;
+      padding: 0px;
+  } 
+  #owl-ootd .owl-height
+  {
+    height: 426px!important;
+  }
+  .product-miniature .thumbnail-top {
+    height: 303px;
+  }
+  .product-miniature .thumbnail-container .product-thumbnail
+  {
+    height: 100%;
+    padding-top: 5px;
+  }
+  .product-miniature .thumbnail-container .product-thumbnail img
+  {
+     object-fit: fill;
+  }
+}
+.close_cookie
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -24,98 +24,96 @@
  *}
 
 {capture assign="productClasses"}
-{if $productClass == "PopularProducts"}
-    col-lg-6 col-md-6 col-sm-6
-{else if !empty($productClass)}
-{$productClass}
-{else}
-col-xs-6 col-sm-6 col-xl-4
-{/if}{/capture}
-
-<div class="products container {if !empty($cssClass)} {$cssClass}{/if}">
-    {if $productClass == "PopularProducts"}  
-        {foreach from=$products item="product" key="position"}
-           {if $page.page_name == 'category' && $position==6}
-               {hook h='displayCategoriesBanner'}
-           {/if}
-           {if $position % 4 == 0}<div class="row item col-lg-12" class={$productClass}">{/if}
-               {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
-           {if $position % 4 == 3 || $position == $products|@count-1}</div>{/if}
-       {/foreach}
+    {if $productClass == "PopularProducts"}
+        col-lg-6 col-md-6 col-sm-6
+    {else if !empty($productClass)}
+    {$productClass}
     {else}
-        {foreach from=$products item="product" key="position"}
+    col-xs-6 col-sm-6 col-xl-4
+    {/if}{/capture}
+    <div class="products container {if !empty($cssClass)} {$cssClass}{/if}">
+        {if $productClass == "PopularProducts"}  
+            {foreach from=$products item="product" key="position"}
             {if $page.page_name == 'category' && $position==6}
                 {hook h='displayCategoriesBanner'}
             {/if}
-            {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position productClasses=$productClasses}
+            {if $position % 4 == 0}<div class="row item col-lg-12" class={$productClass}">{/if}
+                {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position}
+            {if $position % 4 == 3 || $position == $products|@count-1}</div>{/if}
         {/foreach}
-    {/if}
-</div>
-
+        {else}
+            {foreach from=$products item="product" key="position"}
+                {if $page.page_name == 'category' && $position==6}
+                    {hook h='displayCategoriesBanner'}
+                {/if}
+                {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position productClasses=$productClasses}
+            {/foreach}
+        {/if}
+    </div>
 <script>
-var wishList_Products = JSON.parse(localStorage.getItem("WishListId") || "[]");
-var allPageProducts = document.getElementsByClassName('wishlist-button-add-remove');
+    var wishList_Products = JSON.parse(localStorage.getItem("WishListId") || "[]");
+    var allPageProducts = document.getElementsByClassName('wishlist-button-add-remove');
 
-for (let index = 0; index < allPageProducts.length; index++) {
-const element = allPageProducts[index];
-if(wishList_Products.includes(element.attributes["data-productid"].value*1)){
-    element.querySelector('.material-icons-outlined').textContent = "favorite"
-    element.classList.add("inwishlist");
-}   
-}
-var wishList_Products = JSON.parse(localStorage.getItem("WishListId") || "[]");
-document.getElementById('wishlist-p-count').textContent= wishList_Products.length;
-document.getElementById('wishlist-p-count2').textContent= wishList_Products.length;
-if(wishList_Products.length){
-document.getElementById('wishlist-rubber').classList.remove("hide")
-document.getElementById('wishlist-rubber2').classList.remove("hide")
-}else{
-document.getElementById('wishlist-rubber').classList.add("hide")
-document.getElementById('wishlist-rubber2').classList.add("hide")
-}
-function AddToList(x){
-var wishList_Products = JSON.parse(localStorage.getItem("WishListId") || "[]");
-var queryselect  = "button[data-productid='"+x+"']";  
-var elem = document.querySelectorAll(queryselect)  ;
-if(wishList_Products.includes(x)){
-    var index = wishList_Products.indexOf(x);
-    if (index !== -1) {
-        wishList_Products.splice(index, 1);
-        localStorage.setItem("WishListId", JSON.stringify(wishList_Products));
-    }
-    document.getElementById('wishlist-p-count').textContent= wishList_Products.length;
-    document.getElementById('wishlist-p-count2').textContent= wishList_Products.length;
-    if(wishList_Products.length){
-        document.getElementById('wishlist-rubber').classList.remove("hide")
-        document.getElementById('wishlist-rubber2').classList.remove("hide")
-    }else{
-        document.getElementById('wishlist-rubber').classList.add("hide")
-        document.getElementById('wishlist-rubber2').classList.add("hide")
-    }
-    for (let index = 0; index < elem.length; index++) {
-        const element = elem[index];
-        element.querySelector('.material-icons-outlined').textContent =  "favorite_border" ;       
-        element.classList.remove("inwishlist");
-    }
-    
-}else{
-    wishList_Products.push(x)
-    localStorage.setItem("WishListId", JSON.stringify(wishList_Products));
-    document.getElementById('wishlist-p-count').textContent= wishList_Products.length;
-    document.getElementById('wishlist-p-count2').textContent= wishList_Products.length;
-    if(wishList_Products.length){
-        document.getElementById('wishlist-rubber').classList.remove("hide")
-        document.getElementById('wishlist-rubber2').classList.remove("hide")
-    }else{
-        document.getElementById('wishlist-rubber').classList.add("hide")
-        document.getElementById('wishlist-rubber2').classList.add("hide")
-    }
-    for (let index = 0; index < elem.length; index++) {
-        const element = elem[index];
-        element.querySelector('.material-icons-outlined').textContent =  "favorite" ;       
+    for (let index = 0; index < allPageProducts.length; index++) {
+    const element = allPageProducts[index];
+    if(wishList_Products.includes(element.attributes["data-productid"].value*1)){
+        element.querySelector('.material-icons-outlined').textContent = "favorite"
         element.classList.add("inwishlist");
+    }   
     }
-}
-}
+    var wishList_Products = JSON.parse(localStorage.getItem("WishListId") || "[]");
+    document.getElementById('wishlist-p-count').textContent= wishList_Products.length;
+    document.getElementById('wishlist-p-count2').textContent= wishList_Products.length;
+    if(wishList_Products.length){
+    document.getElementById('wishlist-rubber').classList.remove("hide")
+    document.getElementById('wishlist-rubber2').classList.remove("hide")
+    }else{
+    document.getElementById('wishlist-rubber').classList.add("hide")
+    document.getElementById('wishlist-rubber2').classList.add("hide")
+    }
+    function AddToList(x){
+    var wishList_Products = JSON.parse(localStorage.getItem("WishListId") || "[]");
+    var queryselect  = "button[data-productid='"+x+"']";  
+    var elem = document.querySelectorAll(queryselect)  ;
+    if(wishList_Products.includes(x)){
+        var index = wishList_Products.indexOf(x);
+        if (index !== -1) {
+            wishList_Products.splice(index, 1);
+            localStorage.setItem("WishListId", JSON.stringify(wishList_Products));
+        }
+        document.getElementById('wishlist-p-count').textContent= wishList_Products.length;
+        document.getElementById('wishlist-p-count2').textContent= wishList_Products.length;
+        if(wishList_Products.length){
+            document.getElementById('wishlist-rubber').classList.remove("hide")
+            document.getElementById('wishlist-rubber2').classList.remove("hide")
+        }else{
+            document.getElementById('wishlist-rubber').classList.add("hide")
+            document.getElementById('wishlist-rubber2').classList.add("hide")
+        }
+        for (let index = 0; index < elem.length; index++) {
+            const element = elem[index];
+            element.querySelector('.material-icons-outlined').textContent =  "favorite_border" ;       
+            element.classList.remove("inwishlist");
+        }
+        
+    }else{
+        wishList_Products.push(x)
+        localStorage.setItem("WishListId", JSON.stringify(wishList_Products));
+        document.getElementById('wishlist-p-count').textContent= wishList_Products.length;
+        document.getElementById('wishlist-p-count2').textContent= wishList_Products.length;
+        if(wishList_Products.length){
+            document.getElementById('wishlist-rubber').classList.remove("hide")
+            document.getElementById('wishlist-rubber2').classList.remove("hide")
+        }else{
+            document.getElementById('wishlist-rubber').classList.add("hide")
+            document.getElementById('wishlist-rubber2').classList.add("hide")
+        }
+        for (let index = 0; index < elem.length; index++) {
+            const element = elem[index];
+            element.querySelector('.material-icons-outlined').textContent =  "favorite" ;       
+            element.classList.add("inwishlist");
+        }
+    }
+    }
 </script>
 
